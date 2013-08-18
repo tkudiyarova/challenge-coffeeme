@@ -1,0 +1,15 @@
+
+<a data-type="back">Back</a>
+
+<h2>Order
+  <button class="btn btn-mini" data-type="edit">
+	<i class="icon-pencil"></i>
+  </button> 
+  <button class="btn btn-mini" data-type="destroy">
+	<i class="icon-trash"></i>
+  </button> 
+</h2>
+
+<p>Person: <%= @user_id %></p>
+<p>Drink: <%= @drink_id %></p>
+<p>Comment: <%= @comment %></p>

@@ -1,0 +1,25 @@
+<a data-type="back">Back</a>
+
+<h2>Edit Order</h2>
+
+<form>
+  <label> Person </label>
+  <select name="user_id" disabled>
+    <option value=<%= @user_id %>> Person1 </option>
+  </select>
+  <br />
+  
+  <label> Drink </label>
+  <select name="drink_id">
+    <option value="1"> Cappuccino </option>
+    <option value="2"> Americano </option>
+    <option value="3"> Latte </option>
+  </select>
+  <br />
+  
+  <label> Comment </label>
+  <textarea rows="3" name="comment" value="<%= @comment %>"></textarea>
+  <br />
+  
+  <button class="btn btn-primary">Update Order</button>
+</form>

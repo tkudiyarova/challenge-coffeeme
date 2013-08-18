@@ -1,0 +1,27 @@
+<a data-type="back">Back</a>
+
+<h2>New Order</h2>
+
+<form>
+  <label> Person </label>
+  <select name="user_id">
+    <option value="1"> Person1 </option>
+    <option value="2"> Person2 </option>
+    <option value="3"> Person3 </option>
+  </select>
+  <br />
+  
+  <label> Drink </label>
+  <select name="drink_id">
+    <option value="1"> Cappuccino </option>
+    <option value="2"> Americano </option>
+    <option value="3"> Latte </option>
+  </select>
+  <br />
+  
+  <label> Comment </label>
+  <textarea rows="3" name="comment" value="<%= @comment %>"></textarea>
+  <br />
+  
+  <button class="btn btn-primary">Create Order</button>
+</form>

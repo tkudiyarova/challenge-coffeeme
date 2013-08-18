@@ -14,9 +14,10 @@
 class App extends Spine.Controller
   constructor: ->
     super
+    @log("Initialized")
     
     # Initialize controllers:
-    @append(@users = new App.Users)
+    @append(@orders = new App.Orders)
     
     Spine.Route.setup()    
 

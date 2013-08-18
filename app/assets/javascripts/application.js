@@ -15,5 +15,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require spine
-//= require app
+//= require app/index
 //= require_tree .

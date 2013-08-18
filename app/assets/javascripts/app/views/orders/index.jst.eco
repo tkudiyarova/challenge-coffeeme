@@ -1,0 +1,29 @@
+<h2>Orders
+  <button class="btn btn-mini" data-type="new">
+  	<i class="icon-plus-sign"></i>
+  	New order
+  </button>
+</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Drink</th>
+      <th>Drink Size</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% for order in @orders: %>
+	  <tr>
+  	  	<div class="item" data-id="<%= order.id %>">
+    	<td>Person1</td>
+    	<td>Cappuccino</td>
+    	<td>Large</td>
+    	<td>No sugar</td>
+      </tr>
+	<% end %>
+  </tbody>
+</table>
+

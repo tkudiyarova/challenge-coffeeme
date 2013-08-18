@@ -1,6 +1,7 @@
 ChallengeCoffeeme::Application.routes.draw do
-  resources :posts
   resources :users
+  resources :drinks
+  resources :orders
 
-  root 'dashboard#index'
+  root 'orders#index'
 end
