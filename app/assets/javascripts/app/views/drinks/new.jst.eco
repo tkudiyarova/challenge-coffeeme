@@ -1,0 +1,36 @@
+<h1>New Drink</h1>
+
+<a data-type="back">Back</a>
+
+<form>
+  
+  <label>
+    <span>Name</span>
+    <input 
+      type="text" name="name" 
+      value="<%= @name %>" required
+ autofocus>
+    <br />
+  </label>
+  
+  <label>
+    <span>Description</span>
+    <input 
+      type="text" name="description" 
+      value="<%= @description %>" required
+>
+    <br />
+  </label>
+  
+  <label>
+    <span>Size</span>
+    <input 
+      type="text" name="size" 
+      value="<%= @size %>" required
+>
+    <br />
+  </label>
+  
+  <button>Create</button>
+
+</form>

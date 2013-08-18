@@ -1,0 +1,12 @@
+<h1>Listing Drinks</h1>
+
+<% for drink in @drinks: %>
+  <div class="item" data-id="<%= drink.id %>">
+    <a data-type="show"><%= drink.name %></a>
+    
+    <a data-type="edit">Edit</a> 
+    <a data-type="destroy">Destroy</a>
+  </div>
+<% end %>
+
+<p><a data-type="new">New Drink</a></p>
