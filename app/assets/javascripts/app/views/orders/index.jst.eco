@@ -5,24 +5,23 @@
   </button>
 </h2>
 
-<table class="table">
+<table class="clickable table">
   <thead>
     <tr>
       <th>Person</th>
       <th>Drink</th>
-      <th>Drink Size</th>
       <th>Comment</th>
     </tr>
   </thead>
   <tbody>
-	<% for order in @orders: %>
-	  <tr>
-  	  	<div class="item" data-id="<%= order.id %>">
-    	<td>Person1</td>
-    	<td>Cappuccino</td>
-    	<td>Large</td>
-    	<td>No sugar</td>
-      </tr>
+	<% for order in @orders: %>	  
+  	  <div class="order" data-id="<%= order.id %>">
+  	  	<tr>
+    	  <td>Person1</td>
+    	  <td>Cappuccino (Large)</td>
+    	  <td><%= order.comment %></td>
+    	</tr>
+      </div>     
 	<% end %>
   </tbody>
 </table>

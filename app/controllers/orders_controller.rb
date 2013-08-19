@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  respond_to :html, :js
+  respond_to :html, :json
 
   def index
   	@orders = Order.all
+  	respond_with(@orders)
   end
 
   def new
@@ -12,21 +13,38 @@ class OrdersController < ApplicationController
 
   def create
   	@order = Order.new order_params
-  	if @order.save
-  	  redirect_to @order
-  	else
-  	  render action: 'new'
+  	respond_to do |format|
+	  if @order.save
+	  	format.html { redirect_to @order, notice: 'Order was successfully created.' }
+	  	format.json { render json: @order, status: :created, location: @order }
+	  else
+	  	format.html { render action: 'new' }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+  	  end
   	end
   end
 
   def update
-  	@order.update_attributes! order_params
-  	redirect_to @order
+  	respond_to do |format|
+  	  if @order.update_attributes order_params
+  	  	format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
+  	end
   end
 
   def destroy
   	@order.destroy
-  	redirect_to orders_url
+  	respond_to do |format|
+      format.html { redirect_to orders_url }
+      format.json { head :no_content }
+    end
+  end
+
+  def show
   end
 
   private
@@ -35,6 +53,6 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:name, :comment, :user_id, :drink_id)
+      params.require(:order).permit( :name, :comment, :user_id, :drink_id)
     end
 end

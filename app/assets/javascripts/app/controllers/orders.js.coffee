@@ -83,6 +83,7 @@ class Index extends Spine.Controller
   events:
     'click [data-type=show]':    'show'
     'click [data-type=new]':     'new'
+    'click .clickable tbody tr': 'my_func'
 
   constructor: ->
     super
@@ -99,6 +100,10 @@ class Index extends Spine.Controller
     
   new: ->
     @navigate '/orders/new'
+
+  my_func: (e) ->
+    $(e.target).addClass('selected')
+    alert "hello: #{e}, e.targer: #{$(e.target)}, this: #{this}"
     
 class App.Orders extends Spine.Stack
   controllers:

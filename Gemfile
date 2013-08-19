@@ -32,4 +32,5 @@ group :development, :test do
   gem 'faker'
   gem 'launchy'
   gem 'therubyracer'
+  gem 'pry'
 end
